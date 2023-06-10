@@ -84,8 +84,8 @@ const Footer = () => {
               <span>English</span>
             </div>
             <div className="link">
-              <img src="./img/coin.png" alt="" />
-              <span>USD</span>
+              <img src="./img/rupay.png" alt="" />
+              <span>INR</span>
             </div>
             <img src="./img/accessibility.png" alt="" />
           </div>
