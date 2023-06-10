@@ -4,6 +4,45 @@
     justify-content: center;
     background-color: #f1fdf7;
     padding: 100px 0px;
+
+    &.dark {
+      background-color: #0d084d;
+
+      h1 {
+        color: white !important;
+
+        span,
+        i {
+          font-weight: 300 !important;
+        }
+      }
+      p {
+        color: white !important;
+        margin-bottom: 20px !important;
+      }
+
+      .title {
+        color: white !important;
+        font-weight: 300 !important;
+        font-size: 14px !important;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      button {
+        background-color: #1dbf73;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-style: 16px;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+        width: max-content;
+      }
+    }
     .container {
       width: 1400px;
       display: flex;
