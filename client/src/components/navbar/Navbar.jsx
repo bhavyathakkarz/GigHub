@@ -84,16 +84,35 @@ const Navbar = () => {
         <>
           <hr />
           <div className="menu">
-            <Link className="link" to="/">Graphics & Design</Link>
-            <Link className="link" to="/">Video & Animations</Link>
-            <Link className="link" to="/">Writing & Translation</Link>
-            <Link className="link" to="/">AI Services</Link>
-            <Link className="link" to="/">Digital Marketing</Link>
-            <Link className="link" to="/">Music & Audio</Link>
-            <Link className="link" to="/">Programming & Tech</Link>
-            <Link className="link" to="/">Business</Link>
-            <Link className="link" to="/">Lifestyle</Link>
+            <Link className="link" to="/">
+              Graphics & Design
+            </Link>
+            <Link className="link" to="/">
+              Video & Animations
+            </Link>
+            <Link className="link" to="/">
+              Writing & Translation
+            </Link>
+            <Link className="link" to="/">
+              AI Services
+            </Link>
+            <Link className="link" to="/">
+              Digital Marketing
+            </Link>
+            <Link className="link" to="/">
+              Music & Audio
+            </Link>
+            <Link className="link" to="/">
+              Programming & Tech
+            </Link>
+            <Link className="link" to="/">
+              Business
+            </Link>
+            <Link className="link" to="/">
+              Lifestyle
+            </Link>
           </div>
+          <hr />
         </>
       )}
     </div>
