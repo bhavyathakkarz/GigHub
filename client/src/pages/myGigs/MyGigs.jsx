@@ -8,7 +8,7 @@ const MyGigs = () => {
       <div className="container">
         <div className="title">
           <h1>Gigs</h1>
-          <Link className="link">
+          <Link className="link" to="/add">
             <button>Add New Gig</button>
           </Link>
         </div>
