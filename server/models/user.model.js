@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema(
     phone: {
       type: String,
       required: false,
-      unique: true,
+      // unique: true,
     },
     desc: {
       type: String,
