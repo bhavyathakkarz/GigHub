@@ -13,14 +13,23 @@ import Gigs from "./pages/gigs/Gigs";
 import Register from "./pages/register/Register";
 import Orders from "./pages/orders/Orders";
 import "./app.scss";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   const Layout = () => {
     return (
       <div className="app">
-        <Navbar />
-        <Outlet />
-        <Footer />
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
       </div>
     );
   };

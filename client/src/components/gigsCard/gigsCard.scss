@@ -1,11 +1,12 @@
 .gigsCard {
   width: 324px;
-  height: 370px;
+  height: 400px;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgb(239, 238, 238);
   margin-bottom: 20px;
   position: relative;
+  // height: max-content;
 
   img {
     width: 100%;
@@ -45,8 +46,8 @@
       }
     }
     p {
-      font-weight: 300;
-      font-size: 14px;
+      font-weight: 500;
+      font-size: 16px;
       color: #111;
     }
 

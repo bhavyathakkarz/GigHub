@@ -37,10 +37,27 @@
       cursor: pointer;
     }
 
-    span {
+    .err {
       color: red;
       font-size: 20px;
       text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 500;
+
+    span {
+      color: black;
+    }
+
+    .link {
+      color: #1729cc;
     }
   }
 }

@@ -33,15 +33,16 @@
       font-weight: 500;
       font-family: "Montserrat", sans-serif;
       button {
-        color: white;
+        color: #1dbf73;
         padding: 10px 20px;
         border-radius: 5px;
-        border: 1px solid white;
+        border: 1px solid #1dbf73;
         background-color: transparent;
+        font-weight: 500;
         cursor: pointer;
         &:hover {
           background-color: #1dbf73;
-          border-color: #1dbf73;
+          color: white;
         }
       }
       .user {

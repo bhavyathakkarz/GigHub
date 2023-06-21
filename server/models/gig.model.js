@@ -14,6 +14,10 @@ const gigSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    cat: {
+      type: String,
+      required: true,
+    },
     totalStars: {
       type: Number,
       default: 0,
@@ -21,10 +25,6 @@ const gigSchema = new mongoose.Schema(
     starNumber: {
       type: Number,
       default: 0,
-    },
-    desc: {
-      type: String,
-      required: true,
     },
     price: {
       type: Number,

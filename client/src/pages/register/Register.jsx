@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./register.scss";
 import newRequest from "../../utils/newRequest";
 import upload from "../../utils/upload";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -111,6 +111,13 @@ const Register = () => {
             rows="10"
             onChange={handleChange}
           ></textarea>
+          <span className="err">{error && error}</span>
+          <div className="links">
+            <span>Already have an account? </span>
+            <Link className="link" to="/login">
+              Log In
+            </Link>
+          </div>
         </div>
       </form>
     </div>

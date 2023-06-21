@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./login.scss";
 import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -49,7 +49,13 @@ const Login = () => {
           onChange={handleChange}
         />
         <button type="submit">Log In</button>
-        <span>{error && error}</span>
+        <span className="err">{error && error}</span>
+        <div className="links">
+          <span>Do not have an account? </span>
+          <Link className="link" to="/register">
+            Register
+          </Link>
+        </div>
       </form>
     </div>
   );
