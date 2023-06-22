@@ -14,7 +14,7 @@ const GigsCard = ({ item }) => {
       }),
   });
   return (
-    <Link to="/gig/123" className="link">
+    <Link to={`/gig/${item._id}`} className="link">
       <div className="gigsCard">
         <img src={item.cover} alt="" />
         <img src="./img/heart.png" alt="" className="heart" />

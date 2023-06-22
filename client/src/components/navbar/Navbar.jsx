@@ -69,7 +69,7 @@ const Navbar = () => {
               }}
             >
               <img
-                src={currentUser?.img || "./img/noavatar.jpg"}
+                src={currentUser?.img || "/img/noavatar.jpg"}
                 alt="profile"
               />
               <span>{currentUser?.username}</span>

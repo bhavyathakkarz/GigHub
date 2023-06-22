@@ -11,7 +11,7 @@ const Gigs = () => {
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
 
-  const { search } = useLocation();
+  // const { search } = useLocation();
 
   const minRef = useRef();
   const maxRef = useRef();
@@ -27,7 +27,6 @@ const Gigs = () => {
           return res.data;
         }),
   });
-  console.log(data);
 
   const reSort = (type) => {
     setSort(type);
