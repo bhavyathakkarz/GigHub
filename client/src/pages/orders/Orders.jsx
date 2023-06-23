@@ -1,72 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import "./orders.scss";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
+import { Audio } from "react-loader-spinner";
 
 const Orders = () => {
-  const currentUser = {
-    id: 1,
-    username: "John Doe",
-    isSeller: true,
-  };
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["orders"],
+    queryFn: () =>
+      newRequest.get("/orders/").then((res) => {
+        return res.data;
+      }),
+  });
+
   return (
     <div className="orders">
-      <div className="container">
-        <div className="title">
-          <h1>Orders</h1>
+      {isLoading ? (
+        <Audio
+          height="80"
+          width="80"
+          radius="9"
+          color="green"
+          ariaLabel="loading"
+          // wrapperStyle
+          // wrapperClass
+        />
+      ) : error ? (
+        "Something went wrong!!"
+      ) : (
+        <div className="container">
+          <div className="title">
+            <h1>Orders</h1>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>{currentUser?.isSeller ? "Buyer" : "Seller"}</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((order) => (
+                <tr key={order._id}>
+                  <td>
+                    <img className="img" src={order.img} alt="" />
+                  </td>
+                  <td>{order.title}</td>
+                  <td>&#8377;{order.price}</td>
+                  <td>
+                    {currentUser?.isSeller ? order.buyerName : order.sellerName}
+                  </td>
+                  <td>
+                    <img className="delete" src="/img/message.png" alt="" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        <table>
-          <tr>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>{currentUser?.isSeller ? "Buyer" : "Seller"}</th>
-            <th>Contact</th>
-          </tr>
-          <tr>
-            <td>
-              <img className="img" src="/img/man.png" alt="" />
-            </td>
-            <td>Gig1</td>
-            <td>59.99</td>
-            <td>123</td>
-            <td>
-              <img className="delete" src="/img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img className="img" src="/img/man.png" alt="" />
-            </td>
-            <td>Gig1</td>
-            <td>59.99</td>
-            <td>123</td>
-            <td>
-              <img className="delete" src="/img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img className="img" src="/img/man.png" alt="" />
-            </td>
-            <td>Gig1</td>
-            <td>59.99</td>
-            <td>123</td>
-            <td>
-              <img className="delete" src="/img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img className="img" src="/img/man.png" alt="" />
-            </td>
-            <td>Gig1</td>
-            <td>59.99</td>
-            <td>123</td>
-            <td>
-              <img className="delete" src="/img/message.png" alt="" />
-            </td>
-          </tr>
-        </table>
-      </div>
+      )}
     </div>
   );
 };

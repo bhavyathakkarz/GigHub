@@ -30,6 +30,14 @@ const orderSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    sellerName: {
+      type: String,
+      required: true,
+    },
+    buyerName: {
+      type: String,
+      required: true,
+    },
     payment_intent: {
       type: String,
       required: true,

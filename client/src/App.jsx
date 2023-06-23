@@ -18,6 +18,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
+import ScrollToTop from "./ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ function App() {
     return (
       <div className="app">
         <QueryClientProvider client={queryClient}>
+          <ScrollToTop />
           <Navbar />
           <Outlet />
           <Footer />

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./gigs.scss";
-import { gigs } from "../../data";
+// import { gigs } from "../../data";
 import GigsCard from "../../components/gigsCard/GigsCard";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { Audio } from "react-loader-spinner";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);

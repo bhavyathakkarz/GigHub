@@ -5,6 +5,7 @@ import { Audio } from "react-loader-spinner";
 import newRequest from "../../utils/newRequest";
 
 const Review = ({ review }) => {
+  const currentUser = JSON.parse(localStorage.getItem("user"));
   const userId = review?.userId;
   const { isLoading, error, data } = useQuery({
     queryKey: [`${userId}`],
@@ -32,7 +33,9 @@ const Review = ({ review }) => {
           <div className="user">
             <img src={data?.img || "/img/noavatar.jpg"} alt="" />
             <div className="info">
-              <span>{data?.username}</span>
+              <span>
+                {currentUser?._id === data?._id ? "You" : data?.username}
+              </span>
               <div className="country">
                 <img src="/img/flag.png" alt="" />
                 <span>{data?.country}</span>
