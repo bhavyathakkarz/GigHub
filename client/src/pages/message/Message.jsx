@@ -22,6 +22,61 @@ const Message = () => {
               laudantium sequi qui adipisci.
             </p>
           </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+          <div className="item">
+            <img src="/img/man.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+              rerum, necessitatibus tempore quam tenetur dolorem earum hic
+              doloribus quod quasi est fugit molestiae perferendis, ab minima
+              laudantium sequi qui adipisci.
+            </p>
+          </div>
+
           <div className="item owner">
             <img src="/img/man.png" alt="" />
             <p>

@@ -25,6 +25,14 @@ const conversationSchema = new mongoose.Schema(
       default: false,
       required: true,
     },
+    sellerName: {
+      type: String,
+      required: true,
+    },
+    buyerName: {
+      type: String,
+      required: true,
+    },
     lastMessage: {
       type: String,
       required: false,
