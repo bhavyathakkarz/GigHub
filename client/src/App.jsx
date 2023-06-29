@@ -19,6 +19,8 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import ScrollToTop from "./ScrollToTop";
+import Pay from "./pages/pay/Pay";
+import Success from "./pages/success/Success";
 
 const queryClient = new QueryClient();
 
@@ -79,6 +81,14 @@ function App() {
         {
           path: "/message/:id",
           element: <Message />,
+        },
+        {
+          path: "/pay/:id",
+          element: <Pay />,
+        },
+        {
+          path: "/success",
+          element: <Success />,
         },
       ],
     },
