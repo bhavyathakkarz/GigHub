@@ -8,6 +8,7 @@ import gigRouter from "./routes/gig.route.js";
 import reviewRoute from "./routes/review.route.js";
 import orderRoute from "./routes/order.route.js";
 import conversationRoute from "./routes/conversation.route.js";
+import messageRoute from "./routes/message.route.js";
 import cors from "cors";
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/api/gigs", gigRouter);
 app.use("/api/reviews", reviewRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/conversations", conversationRoute);
+app.use("/api/messages", messageRoute);
 app.use((err, req, res, next) => {
   const errStatus = err.status || 500;
   const errMessage = err.message || "Something went wrong!!";

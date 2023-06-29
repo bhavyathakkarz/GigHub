@@ -34,6 +34,7 @@ const Reviews = ({ gigId }) => {
     e.preventDefault();
     const { desc, star } = review;
     mutation.mutate({ gigId, desc, star });
+    setReview((prev) => ({ ...prev, desc: "" }));
   };
   return (
     <div className="reviews">

@@ -3,9 +3,11 @@ import "./orders.scss";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { Audio } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
@@ -13,6 +15,23 @@ const Orders = () => {
         return res.data;
       }),
   });
+
+  const handleClick = async (orders) => {
+    const sellerId = orders.sellerId;
+    const buyerId = orders.buyerId;
+    const id = sellerId + buyerId;
+    try {
+      const res = await newRequest.get(`/conversations/single/${id}`);
+      navigate(`/message/${res.data.id}`);
+    } catch (err) {
+      if (err.response.status === 404) {
+        const res = await newRequest.post(`/conversations/`, {
+          to: currentUser?.isSeller ? buyerId : sellerId,
+        });
+        navigate(`/message/${res.data.id}`);
+      }
+    }
+  };
 
   return (
     <div className="orders">
@@ -55,7 +74,12 @@ const Orders = () => {
                     {currentUser?.isSeller ? order.buyerName : order.sellerName}
                   </td>
                   <td>
-                    <img className="delete" src="/img/message.png" alt="" />
+                    <img
+                      className="delete"
+                      src="/img/message.png"
+                      alt=""
+                      onClick={() => handleClick(order)}
+                    />
                   </td>
                 </tr>
               ))}
