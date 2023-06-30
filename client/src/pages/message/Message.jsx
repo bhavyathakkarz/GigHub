@@ -9,6 +9,11 @@ const Message = () => {
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("user"));
   const queryClient = useQueryClient();
+
+  useEffect(() => {
+    !currentUser && navigate("/login");
+  }, [currentUser]);
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["messages"],
     queryFn: () =>
@@ -117,12 +122,12 @@ const Message = () => {
                 <img
                   src={
                     currentUser?._id === m.userId
-                      ? currentUser.img
+                      ? currentUser.img || "/img/noavatar.jpg"
                       : userIsLoading
                       ? "loading"
                       : userError
                       ? "error"
-                      : userData.img
+                      : userData.img || "/img/noavatar.jpg"
                   }
                   alt=""
                 />

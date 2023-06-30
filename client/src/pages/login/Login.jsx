@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.scss";
 import newRequest from "../../utils/newRequest";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,8 +8,13 @@ const Login = () => {
     username: "",
     password: "",
   });
+  const currentUser = JSON.parse(localStorage.getItem("user"));
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    currentUser && navigate("/");
+  }, [currentUser]);
 
   const handleChange = (e) => {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));

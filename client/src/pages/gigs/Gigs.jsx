@@ -5,13 +5,13 @@ import GigsCard from "../../components/gigsCard/GigsCard";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { Audio } from "react-loader-spinner";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Gigs = () => {
   const [open, setOpen] = useState(false);
   const [sort, setSort] = useState("sales");
 
-  // const { search } = useLocation();
+  const { search } = useLocation();
 
   const minRef = useRef();
   const maxRef = useRef();
@@ -21,7 +21,7 @@ const Gigs = () => {
     queryFn: () =>
       newRequest
         .get(
-          `/gigs?min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
         )
         .then((res) => {
           return res.data;

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./register.scss";
 import newRequest from "../../utils/newRequest";
 import upload from "../../utils/upload";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    currentUser && navigate("/");
+  }, [currentUser]);
   const [user, setUser] = useState({
     username: "",
     email: "",

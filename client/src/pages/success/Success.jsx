@@ -6,7 +6,10 @@ const Success = () => {
   const { search } = useLocation(); //direct {key}
   const params = new URLSearchParams(search);
   const payment_intent = params.get("payment_intent"); //query = location (search key) || params = useParams()
-
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    !currentUser && navigate("/login");
+  }, [currentUser]);
   useEffect(() => {
     const makeRequest = async () => {
       try {

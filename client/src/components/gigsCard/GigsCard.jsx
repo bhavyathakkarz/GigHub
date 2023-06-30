@@ -38,13 +38,16 @@ const GigsCard = ({ item }) => {
             </div>
           )}
           <p>{item.title}</p>
-          <div className="ratings">
-            <img src="./img/star.png" alt="" />
-            <span>
-              {!isNaN(item.totalStars / item.starNumber) &&
-                Math.round(item.totalStars / item.starNumber)}
-            </span>
-          </div>
+          {!isNaN(item.totalStars / item.starNumber) && (
+            <div className="ratings">
+              {Array(Math.round(item.totalStars / item.starNumber))
+                .fill("./img/star.png")
+                .map((i) => (
+                  <img src={i} alt="" key={i} />
+                ))}
+              <span>{Math.round(item.totalStars / item.starNumber)}</span>
+            </div>
+          )}
           <div className="price">
             <span>From </span>
             <div className="amount">

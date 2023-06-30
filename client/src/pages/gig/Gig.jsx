@@ -47,7 +47,7 @@ const Gig = () => {
       ) : (
         <div className="container">
           <div className="left">
-            <span className="breadcrumbs">fiverr | GRAPHICS & DESIGN </span>
+            <span className="breadcrumbs">fiverr | {data.cat} </span>
             <h1>{data.title}</h1>
             {isLoadingUser ? (
               <Audio

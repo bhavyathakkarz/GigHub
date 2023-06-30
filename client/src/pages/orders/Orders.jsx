@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./orders.scss";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+
+  useEffect(() => {
+    !currentUser && navigate("/login");
+  }, [currentUser]);
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
